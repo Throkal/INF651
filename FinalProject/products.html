@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="logo">Medicare+</div>
+
+  <!-- Navigation menu for all pages -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a class="active-page" href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<!-- ================ PRODUCT LISTING SECTION ================ -->
+<main class="page">
+  <h1>Medical Products</h1>
+
+  <!-- Filter used by JS to narrow or sort products -->
+  <div class="filters">
+
+    <!-- Search bar, JS listens to input changes and filter product names -->
+    <input type="text" id="searchBox" placeholder="Search...">
+
+    <!-- Category dropdown, JS filters items by assigned category -->
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="Pain Relief">Pain Relief</option>
+      <option value="Allergy">Allergy</option>
+      <option value="Supplements">Supplements</option>
+      <option value="Medical Devices">Medical Devices</option>
+    </select>
+
+    <!-- Sort dropdown, JS sorts items by name or price -->
+    <select id="sortFilter">
+      <option value="none">Sort</option>
+      <option value="price-asc">Price Low → High</option>
+      <option value="price-desc">Price High → Low</option>
+      <option value="name">A → Z</option>
+    </select>
+  </div>
+
+  <!-- JS generates product cards dynamically inside grid container -->
+  <div id="productContainer" class="grid"></div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="cart.js"></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+  <div class="logo">Medicare+</div>
+
+  <!-- Navigation menu for all pages -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a class="active-page" href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<!-- ================ MAIN CART SECTION ================ -->
+<main class="page">
+  <h1>Your Shopping Cart</h1>
+
+  <!-- Container dynamically filled by cart.js with cart items -->
+  <div id="cartContainer"></div>
+
+  <!-- Total price updated by JS based on cart content -->
+  <h2 id="totalPrice"></h2>
+</main>
+
+</body>
+</html>

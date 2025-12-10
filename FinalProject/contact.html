@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="logo">Medicare+</div>
+
+  <!-- Navigation menu for all pages -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a class="active-page" href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<!-- ================ CONTACT FORM SECTION ================ -->
+<main class="page contact-page">
+  <h1>Contact Us</h1>
+
+  <!-- Contact card containing the entire form -->
+  <div class="contact-card">
+
+    <!-- Form is validated through JS in script.js -->
+    <form id="contactForm">
+
+      <!-- User's Name Field (JS checks for minimum length) -->
+      <div class="form-group">
+        <label for="contactName">Name</label>
+        <input id="contactName" type="text">
+        <small class="error" id="nameErr"></small>
+      </div>
+
+      <!-- Email Field (JS checks for valid email format) -->
+      <div class="form-group">
+        <label for="contactEmail">Email</label>
+        <input id="contactEmail" type="email">
+        <small class="error" id="emailErr"></small>
+      </div>
+
+      <!-- Message Field (JS checks for minimum length) -->
+      <div class="form-group">
+        <label for="contactMsg">Message</label>
+        <textarea id="contactMsg"></textarea>
+        <small class="error" id="msgErr"></small>
+      </div>
+
+      <!-- Submit button triggers JS validation -->
+      <button class="contact-btn" type="submit">Send</button>
+
+      <!-- Success message inserted dynamically  -->
+      <p id="contactSuccess" class="success"></p>
+
+    </form>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+<header>
+  <div class="logo">Medicare+</div>
+
+  <!-- Navigation menu linking to main site pages -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a class="active-page" href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<!-- ================ ABOUT SECTION ================ -->
+<section class="about-hero">
+  <div class="about-text">
+    <h1>Our mission</h1>
+
+    <p class="about-subtext">
+      Our mission is to make essential healthcare accessible, reliable, and safe for every family because everyone deserves a healthier, worry-free life.
+    </p>
+    <p class="about-subtext">
+      If you have any question, please send us an email!
+    </p>
+
+    <!-- Button linking user to contact page -->
+    <a href="contact.html" class="about-btn">Contact Us</a>
+
+    <!-- Interactive area: JS shows/hides phone number -->
+    <p class="reveal-phone">
+    ...or <span id="showPhone" class="phone-link">click here</span> for our phone number
+    </p>
+
+    <p id="phoneNumber" class="phone-number hidden">
+      ☎️ (785) 123-4567
+    </p>
+
+  </div>
+
+  <div class="about-img">
+    <img src="images/about 1.jpg" alt="Medicare+ representative">
+  </div>
+</section>
+
+</body>
+</html>

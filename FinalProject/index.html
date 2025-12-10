@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="logo">Medicare+</div>
+
+  <!-- Navigation menu for all pages -->
+  <nav>
+    <a class="active-page" href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<!-- ================ HERO SECTION ================ -->
+<main class="hero">
+
+  <!-- Left-side hero text and interactive elements -->
+  <div class="hero-text">
+    <h1>Medicine and Medical Devices</h1>
+
+    <!-- Welcome message  -->
+    <p id="welcomeText">
+      Welcome to Medicare+ — your trusted medical essentials store.
+    </p>
+
+    <div class="btn-group">
+      <!-- Direct link to the products page -->
+      <a class="btn-primary" href="products.html">SHOP NOW</a>
+
+      <!-- Redirects to About page -->
+      <button class="aboutUs-btn" id="aboutUsBtn">ABOUT US</button>
+    </div>
+
+    <!-- ============ MOOD INTERACTION BOX ============ -->
+    <!-- User selects mood and JS updates message based on choice -->
+    <div id="moodBox" class="mood-box">
+      <p>How are you feeling today?</p>
+
+      <div class="mood-buttons">
+        <button class="mood-btn" data-mood="good">🙂 Good</button>
+        <button class="mood-btn" data-mood="okay">😐 Okay</button>
+        <button class="mood-btn" data-mood="bad">🤒 Not Well</button>
+      </div>
+
+      <!-- Output area populated dynamically by JS -->
+      <p id="moodResponse" class="mood-response"></p>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
