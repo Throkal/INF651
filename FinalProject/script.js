@@ -1,5 +1,6 @@
 // ---------------- HOME PAGE/INDEX ------------------
 
+//Redirects the user to the About page when they click "ABOUT US"
 const aboutUsBtn = document.getElementById("aboutUsBtn");
 
 if (aboutUsBtn) {
@@ -7,14 +8,18 @@ if (aboutUsBtn) {
     window.location.href = "about.html";
   });
 }
+
+//Mood selection buttons on the homepage
 const moodButtons = document.querySelectorAll(".mood-btn");
 const moodResponse = document.getElementById("moodResponse");
 
+// Only run this if the mood ui exists on the page
 if (moodButtons && moodResponse) {
   moodButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const mood = btn.dataset.mood;
+      const mood = btn.dataset.mood; // "good", "okay", or "bad"
 
+      // Show friendly message based on what the user select
       if (mood === "good") {
         moodResponse.textContent = "Great to hear! Keep taking care of your health. 😊";
       } 
@@ -30,14 +35,16 @@ if (moodButtons && moodResponse) {
 }
 
 // ---------------- ABOUT PAGE ------------------
+
 const showPhone = document.getElementById("showPhone");
 const phoneNumber = document.getElementById("phoneNumber");
 
+//Toggling phone number visibility when user clicks
 if (showPhone) {
   showPhone.addEventListener("click", () => {
     phoneNumber.classList.toggle("hidden");
 
-    // Optional text change
+    // Change text so the user can choose to hide it again
     showPhone.textContent = 
       phoneNumber.classList.contains("hidden")
       ? "click here"
@@ -46,6 +53,7 @@ if (showPhone) {
 }
 
 // ---------------- PRODUCTS PAGE ------------------
+// product DB for the shop
 const products = [
   { name: "Vitamin C", 
     price: 17.99, 
@@ -81,19 +89,23 @@ const products = [
     image: "images/Blood pressure monitor.jpg" },
 ];
 
+// Page elements used for filtering and sorting
 const container = document.getElementById("productContainer");
 const searchBox = document.getElementById("searchBox");
 const categoryFilter = document.getElementById("categoryFilter");
 const sortFilter = document.getElementById("sortFilter");
 
+// Renders product card based on search, category and sort option
 function renderProducts() {
+  // Only execute if we're on the product page
   if (!container|| !searchBox || !categoryFilter || !sortFilter) return;
 
-  let list = [...products];
+  let list = [...products]; // making a fresh copy to safely filter
 
 // Search
 const search = searchBox.value.toLowerCase();
 
+//Matches search terms using the beginning of words
 list = list.filter(p => 
   p.name
     .toLowerCase()
@@ -110,6 +122,7 @@ list = list.filter(p =>
   if (sortFilter.value === "price-desc") list.sort((a,b)=>b.price-a.price);
   if (sortFilter.value === "name") list.sort((a,b)=>a.name.localeCompare(b.name));
 
+  //Clear the display and rebuild it
   container.innerHTML = "";
   list.forEach(p => {
     const div = document.createElement("div");
@@ -123,9 +136,10 @@ list = list.filter(p =>
     `;
     container.appendChild(div);
   });
-  attachCartButtons();
+  attachCartButtons(); // re attach cart button listeners each time UI updates
 }
 
+// Only run product rendering if this page has the container
 if (container) {
   renderProducts();
   searchBox.addEventListener("input", renderProducts);
@@ -142,17 +156,21 @@ if (contactForm) {
 
     let valid = true;
 
+    //User inputs
     const name = document.getElementById("contactName");
     const email = document.getElementById("contactEmail");
     const msg = document.getElementById("contactMsg");
 
+    //Error message elements
     const nameErr = document.getElementById("nameErr");
     const emailErr = document.getElementById("emailErr");
     const msgErr = document.getElementById("msgErr");
 
+    //Reset old error messages
     nameErr.textContent = emailErr.textContent = msgErr.textContent = "";
 
-    if (name.value.length < 2) {
+    // validation checks
+    if (name.value.length < 3) {
       nameErr.textContent = "Enter a valid name.";
       valid = false;
     }
