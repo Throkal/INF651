@@ -185,6 +185,7 @@ if (contactForm) {
       valid = false;
     }
 
+    // Display success message if all is good
     if (valid) {
       document.getElementById("contactSuccess").textContent =
         "Message sent successfully!";
@@ -194,10 +195,12 @@ if (contactForm) {
 }
 
 // ---------------- CART SYSTEM ------------------
+
+// Adds an item to localStorage cart
 function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Check if item already exists
+  // If the product already exists, increase quantity 
   const existing = cart.find(item => item.name === product.name);
   if (existing) {
     existing.qty += 1;
@@ -206,10 +209,12 @@ function addToCart(product) {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Quick feedback to user for now
   alert(product.name + " added to cart!");
 }
 
-// Attach to buttons after rendering
+// Connects "Add to Cart" buttons to addToCart()
 function attachCartButtons() {
   const buttons = document.querySelectorAll(".add-btn");
 
@@ -221,5 +226,3 @@ function attachCartButtons() {
     });
   });
 }
-
-
